@@ -1,0 +1,67 @@
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS
+   Shared across Hero, About, Skills, Experience, Projects and Contact.
+   These classes are toggled at runtime via classList in
+   src/hooks/useScrollReveal.js (IntersectionObserver), not via JSX
+   className strings, so they must stay as real CSS rather than Tailwind
+   utilities (Tailwind can't generate classes that aren't present in the
+   scanned source).
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 560ms cubic-bezier(.2, .9, .2, 1), opacity 420ms ease;
+  pointer-events: auto;
+}
+
+.reveal-left { transform: translateX(-28px) translateZ(0); }
+.reveal-right { transform: translateX(28px) translateZ(0); }
+.reveal-up { transform: translateY(18px) translateZ(0); }
+.reveal-scale { transform: translateY(6px) scale(.99); }
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 420ms cubic-bezier(.2, .9, .2, 1), opacity 360ms ease;
+}
+
+.reveal-stagger.in-view > * {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-stagger.in-view > *:nth-child(1) { transition-delay: .04s }
+.reveal-stagger.in-view > *:nth-child(2) { transition-delay: .08s }
+.reveal-stagger.in-view > *:nth-child(3) { transition-delay: .12s }
+.reveal-stagger.in-view > *:nth-child(4) { transition-delay: .16s }
+.reveal-stagger.in-view > *:nth-child(5) { transition-delay: .20s }
+.reveal-stagger.in-view > *:nth-child(6) { transition-delay: .24s }
+
+.card-lift.in-view {
+  transition: transform 420ms cubic-bezier(.2, .9, .2, 1), box-shadow 420ms ease;
+  transform: translateY(0);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger > *,
+  .card-lift {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+.reveal[tabindex="0"]:focus { outline: 2px solid rgba(90, 108, 255, 0.18); outline-offset: 6px; }
+
+@media (max-width: 640px) {
+  .reveal { transition-duration: 420ms; }
+  .reveal-left, .reveal-right { transform: translateY(10px); }
+}
