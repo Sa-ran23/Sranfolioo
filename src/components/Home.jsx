@@ -1,6 +1,6 @@
 import About from './About.jsx';
 import TypingEffect from './TypingEffect.jsx';
-import saran-resume from '../Resume/saran-resume.pdf';
+import saran-resume from '../src/Resume/saran-resume.pdf';
 
 function Home() {
   return (
