@@ -1,45 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { motion } from "framer-motion";
-
-// export default function ScrollIndicator() {
-//   const [progress, setProgress] = useState(0);
-
-//   useEffect(() => {
-//     const updateScroll = () => {
-//       const scrollTop = window.scrollY;
-
-//       const docHeight =
-//         document.documentElement.scrollHeight - window.innerHeight;
-
-//       setProgress((scrollTop / docHeight) * 100);
-//     };
-
-//     updateScroll();
-
-//     window.addEventListener("scroll", updateScroll);
-
-//     return () => window.removeEventListener("scroll", updateScroll);
-//   }, []);
-
-//   return (
-//     <div className="fixed right-7 top-1/2 -translate-y-1/2 h-48 w-[2px] bg-zinc-700 rounded-full z-[999]">
-
-//       <motion.div
-//         className="absolute left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-cyan-400 shadow-[0_0_18px_#22d3ee]"
-//         animate={{
-//           top: `${progress}%`,
-//         }}
-//         transition={{
-//           type: "spring",
-//           stiffness: 90,
-//           damping: 18,
-//         }}
-//       />
-//     </div>
-//   );
-// }
-
-
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -104,7 +62,7 @@ export default function ScrollBar() {
   return (
     <div
       ref={trackRef}
-      className="fixed right-5 top-1/2 -translate-y-1/2 h-60 w-[8px] rounded-full bg-zinc-800 z-[9999]"
+      className="hidden lg:block fixed right-5 top-1/2 -translate-y-1/2 h-60 w-[8px] rounded-full bg-zinc-800 z-[9999]"
     >
       <motion.div
        onMouseDown={() => {
