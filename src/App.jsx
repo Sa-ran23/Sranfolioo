@@ -5,12 +5,14 @@ import Experience from "../src/components/Experience.jsx";
 import Projects from "../src/components/Projects.jsx";
 import Contact from "../src/components/Contact.jsx";
 import Footer from "../src/components/Footer.jsx";
+import ScrollIndicator from "./components/ScrollIndicator";
 
 function App() {
 
 
   return (
     <>
+     <ScrollIndicator />
      < Header />
      < Home />
      < Skills />
