@@ -65,20 +65,17 @@ export default function ScrollBar() {
       className="hidden lg:block fixed right-5 top-1/2 -translate-y-1/2 h-60 w-[8px] rounded-full bg-zinc-800 z-[9999]"
     >
       <motion.div
-       onMouseDown={() => {
-  setDragging(true);
-  document.body.style.userSelect = "none";
-}}
-        className="absolute left-1/2 h-8 w-8 -translate-x-1/2 cursor-grab active:cursor-grabbing rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 shadow-[0_0_25px_#22d3ee]"
-        animate={{
-          top: `calc(${progress * 100}% - 16px)`,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 20,
-        }}
-      />
+  onMouseDown={(e) => {
+    e.preventDefault();
+    setDragging(true);
+  }}
+  className="absolute left-1/2 -translate-x-1/2 cursor-grab active:cursor-grabbing text-cyan-400 font-bold text-xl"
+  animate={{
+    top: `calc(${progress * 100}% - 12px)`,
+  }}
+>
+  {"</>"}
+</motion.div>
     </div>
   );
 }
