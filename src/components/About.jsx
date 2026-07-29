@@ -20,8 +20,9 @@ function About() {
 
         <div className="about-text">
           <p className="text-[0.95rem] leading-relaxed text-text-muted">
-            I am Sarankumar M, a BCA graduate with a strong interest in building clean and practical software solutions. I completed a Python course at Livewire and gained valuable experience working as a PHP Developer, contributing to both front-end and back-end development for internal company applications.
-While I started my journey with PHP, my long-term interest has always been in Java and Python, and I am actively learning and improving my skills in these technologies. I enjoy creating simple, efficient, and user-friendly web applications, and I'm genuinely motivated to grow, learn new tools, and work on meaningful real-world projects.
+            I am **Sarankumar M**, a BCA graduate with a strong interest in building clean, practical, and user-friendly software solutions. I completed a **Junior Software Developer** course at **CADD Technology**, where I strengthened my foundation in software development and modern programming concepts.
+I also have professional experience as a **PHP Developer** at my previous company, where I contributed to both front-end and back-end development for internal company applications. While my career began with PHP, I also have a strong interest in **Java** and **React** and am actively enhancing my skills by building projects and exploring modern development practices.
+I enjoy creating efficient, scalable, and user-friendly web applications, and I am always eager to learn new technologies, solve real-world challenges, and grow as a software developer.
           </p>
         </div>
       </div>
